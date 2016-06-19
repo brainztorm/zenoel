@@ -1,0 +1,9 @@
+@import events.PostId
+@import events.PostContent
+@import views.html.posts.contentForm
+
+@(id: PostId, form: Form[PostContent])(implicit request: RequestHeader, messages: Messages)
+
+@main("New blog post") {
+  @contentForm(label = "Add", action = routes.PostsController.submitNewPost(id), form = form)
+}

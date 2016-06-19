@@ -1,0 +1,5 @@
+@(id: PostId, form: Form[PostContent])(implicit request: RequestHeader, messages: Messages)
+
+@main("Edit blog post") {
+  @contentForm(label = "Save", action = routes.PostsController.submitEditForm(id), form = form)
+}
